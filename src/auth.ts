@@ -1,19 +1,5 @@
 import KeycloakProvider from "next-auth/providers/keycloak";
 
-console.log("NEXTAUTH_KEYCLOAK_ISSUER", process.env.NEXTAUTH_KEYCLOAK_ISSUER);
-console.log(
-  "NEXTAUTH_KEYCLOAK_CLIENT_ID",
-  process.env.NEXTAUTH_KEYCLOAK_CLIENT_ID
-);
-console.log(
-  "NEXTAUTH_KEYCLOAK_CLIENT_SECRET",
-  process.env.NEXTAUTH_KEYCLOAK_CLIENT_SECRET
-);
-console.log("NEXTAUTH_SECRET", process.env.NEXTAUTH_SECRET);
-console.log("NEXTAUTH_BACKEND_URL", process.env.NEXTAUTH_BACKEND_URL);
-console.log("NEXTAUTH_URL", process.env.NEXTAUTH_URL);
-console.log("******");
-
 // this will refresh an expired access token, when needed
 async function refreshAccessToken(token) {
   const resp = await fetch(

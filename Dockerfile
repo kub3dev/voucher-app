@@ -18,6 +18,14 @@ RUN \
 
 # Rebuild the source code only when needed
 FROM base AS builder
+
+ENV NEXTAUTH_KEYCLOAK_CLIENT_ID=NEXTAUTH_KEYCLOAK_CLIENT_ID
+ENV NEXTAUTH_KEYCLOAK_CLIENT_SECRET=NEXTAUTH_KEYCLOAK_CLIENT_SECRET
+ENV NEXTAUTH_KEYCLOAK_ISSUER=NEXTAUTH_KEYCLOAK_ISSUER
+ENV NEXTAUTH_URL=NEXTAUTH_URL
+ENV NEXTAUTH_SECRET=NEXTAUTH_SECRET
+ENV NEXTAUTH_BACKEND_URL=NEXTAUTH_BACKEND_URL
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -53,6 +61,9 @@ RUN chown nextjs:nodejs .next
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/entrypoint.sh /usr/bin/
+
+RUN chmod +x /usr/bin/entrypoint.sh
 
 USER nextjs
 
@@ -61,6 +72,8 @@ EXPOSE 3000
 ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
+
+ENTRYPOINT ["entrypoint.sh"]
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
