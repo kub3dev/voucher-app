@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  CONTAINER_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/voucher-api
+  CONTAINER_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/voucher-app
 
 jobs:
   build:
