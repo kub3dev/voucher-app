@@ -8,7 +8,7 @@ image:
   repository: fclench/voucher-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 2024.9.11.2.9.5
+  tag: 2024.9.11.2.15.37
 
 imagePullSecrets: []
 nameOverride: ""
