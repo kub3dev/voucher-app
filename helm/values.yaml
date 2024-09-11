@@ -8,7 +8,7 @@ image:
   repository: fclebinho/voucher-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 2024.9.11.23.18.42
+  tag: 2024.9.11.23.35.25
 
 env:
   NEXT_PUBLIC_KEYCLOAK_CLIENT_ID: "kub3-vouchers-app"
