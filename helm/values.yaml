@@ -11,8 +11,8 @@ image:
   tag: 2024.9.11.2.50.13
 
 env:
-  NEXTAUTH_KEYCLOAK_CLIENT_ID: "vouchers-app"
-  NEXTAUTH_KEYCLOAK_CLIENT_SECRET: "VuaCR6x6aKuBDnUW3XiURT2KTHaQUAmE"
+  NEXTAUTH_KEYCLOAK_CLIENT_ID: "kub3-vouchers-app"
+  NEXTAUTH_KEYCLOAK_CLIENT_SECRET: "F7a7owEADT0R4Vv6pcHLMiXnHd42HCRl"
   NEXTAUTH_KEYCLOAK_ISSUER: "https://keycloak.kub3.dev/realms/vouchers"
   NEXTAUTH_URL: "https://app.voucher.kub3.dev"
   NEXTAUTH_SECRET: "hrqLC124l+25+h0N5940BREf02mEkjhAvYkCmHrHBvQ="
