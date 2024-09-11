@@ -3,13 +3,13 @@ import KeycloakProvider from "next-auth/providers/keycloak";
 // this will refresh an expired access token, when needed
 async function refreshAccessToken(token) {
   const resp = await fetch(
-    `${process.env.NEXTAUTH_KEYCLOAK_ISSUER}/protocol/openid-connect/token`,
+    `${process.env.NEXT_PUBLIC_KEYCLOAK_ISSUER}/protocol/openid-connect/token`,
     {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        client_id: process.env.NEXTAUTH_KEYCLOAK_CLIENT_ID ?? "keycloak",
+        client_id: process.env.NEXT_PUBLIC_KEYCLOAK_CLIENT_ID ?? "keycloak",
         client_secret:
-          process.env.NEXTAUTH_KEYCLOAK_CLIENT_SECRET ?? "keycloak",
+          process.env.NEXT_PUBLIC_KEYCLOAK_CLIENT_SECRET ?? "keycloak",
         grant_type: "refresh_token",
         refresh_token: token.refresh_token,
       }),
@@ -31,12 +31,12 @@ async function refreshAccessToken(token) {
 }
 
 export const authOptions = {
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXT_PUBLIC_AUTH_SECRET,
   providers: [
     KeycloakProvider({
-      clientId: `${process.env.NEXTAUTH_KEYCLOAK_CLIENT_ID}`,
-      clientSecret: `${process.env.NEXTAUTH_KEYCLOAK_CLIENT_SECRET}`,
-      issuer: `${process.env.NEXTAUTH_KEYCLOAK_ISSUER}`,
+      clientId: `${process.env.NEXT_PUBLIC_KEYCLOAK_CLIENT_ID}`,
+      clientSecret: `${process.env.NEXT_PUBLIC_KEYCLOAK_CLIENT_SECRET}`,
+      issuer: `${process.env.NEXT_PUBLIC_KEYCLOAK_ISSUER}`,
     }),
   ],
 
