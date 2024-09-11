@@ -16,7 +16,7 @@ env:
   NEXTAUTH_KEYCLOAK_ISSUER: "https://keycloak.kub3.dev/realms/vouchers"
   NEXTAUTH_URL: "https://app.voucher.kub3.dev"
   NEXTAUTH_SECRET: "hrqLC124l+25+h0N5940BREf02mEkjhAvYkCmHrHBvQ="
-  NEXTAUTH_BACKEND_URL: "https://voucher.kub3.dev"
+  NEXTAUTH_BACKEND_URL: "https://api.voucher.kub3.dev"
 
 
 imagePullSecrets: []
