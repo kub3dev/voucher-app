@@ -15,11 +15,7 @@ export default function AuthStatus() {
   const { data: session, status } = useSession();
 
   useEffect(() => {
-    if (
-      status != "loading" &&
-      session &&
-      session?.error === "RefreshAccessTokenError"
-    ) {
+    if (status != "loading" && session) {
       signOut({ callbackUrl: "/" });
     }
   }, [session, status]);

@@ -1,5 +1,6 @@
-import { authOptions } from "../[...nextauth]/route";
+import { authOptions } from "@/auth";
 import { getServerSession } from "next-auth";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
@@ -18,8 +19,8 @@ export async function GET() {
       await fetch(url, { method: "GET" });
     } catch (err) {
       console.error(err);
-      return new Response({ status: 500 });
+      return NextResponse.json({ status: 500 });
     }
   }
-  return new Response({ status: 200 });
+  return NextResponse.json({ status: 200 });
 }
