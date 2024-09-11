@@ -11,12 +11,12 @@ image:
   tag: 2024.9.11.2.15.37
 
 env:
-  KEYCLOAK_CLIENT_ID: "vouchers-app"
-  KEYCLOAK_CLIENT_SECRET: "VuaCR6x6aKuBDnUW3XiURT2KTHaQUAmE"
-  KEYCLOAK_ISSUER: "https://keycloak.kub3.dev/realms/vouchers"
+  NEXTAUTH_KEYCLOAK_CLIENT_ID: "vouchers-app"
+  NEXTAUTH_KEYCLOAK_CLIENT_SECRET: "VuaCR6x6aKuBDnUW3XiURT2KTHaQUAmE"
+  NEXTAUTH_KEYCLOAK_ISSUER: "https://keycloak.kub3.dev/realms/vouchers"
   NEXTAUTH_URL: "https://app.voucher.kub3.dev"
   NEXTAUTH_SECRET: "hrqLC124l+25+h0N5940BREf02mEkjhAvYkCmHrHBvQ="
-  BACKEND_URL: "https://voucher.kub3.dev"
+  NEXTAUTH_BACKEND_URL: "https://voucher.kub3.dev"
 
 
 imagePullSecrets: []

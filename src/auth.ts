@@ -7,8 +7,9 @@ async function refreshAccessToken(token) {
     {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        client_id: process.env.KEYCLOAK_CLIENT_ID ?? "keycloak",
-        client_secret: process.env.KEYCLOAK_CLIENT_SECRET ?? "keycloak",
+        client_id: process.env.NEXTAUTH_KEYCLOAK_CLIENT_ID ?? "keycloak",
+        client_secret:
+          process.env.NEXTAUTH_KEYCLOAK_CLIENT_SECRET ?? "keycloak",
         grant_type: "refresh_token",
         refresh_token: token.refresh_token,
       }),
@@ -32,8 +33,8 @@ async function refreshAccessToken(token) {
 export const authOptions = {
   providers: [
     KeycloakProvider({
-      clientId: `${process.env.KEYCLOAK_CLIENT_ID}`,
-      clientSecret: `${process.env.KEYCLOAK_CLIENT_SECRET}`,
+      clientId: `${process.env.NEXTAUTH_KEYCLOAK_CLIENT_ID}`,
+      clientSecret: `${process.env.NEXTAUTH_KEYCLOAK_CLIENT_SECRET}`,
       issuer: `${process.env.KEYCLOAK_ISSUER}`,
     }),
   ],

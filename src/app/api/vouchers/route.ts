@@ -6,7 +6,7 @@ export async function GET() {
   const session = await getServerSession(authOptions);
 
   if (session) {
-    const url = `${process.env.BACKEND_URL}/vouchers`;
+    const url = `${process.env.NEXTAUTH_BACKEND_URL}/vouchers`;
 
     const resp = await fetch(url, {
       headers: {
