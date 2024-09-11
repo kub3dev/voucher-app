@@ -8,7 +8,7 @@ image:
   repository: fclebinho/voucher-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 2024.9.11.2.15.37
+  tag: 2024.9.11.2.43.55
 
 env:
   NEXTAUTH_KEYCLOAK_CLIENT_ID: "vouchers-app"
