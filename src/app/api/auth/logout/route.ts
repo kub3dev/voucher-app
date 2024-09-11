@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const session = await getServerSession(authOptions);
 
-  const LOGOUT_URL = `${process.env.KEYCLOAK_ISSUER}/protocol/openid-connect/logout`;
+  const LOGOUT_URL = `${process.env.NEXTAUTH_KEYCLOAK_ISSUER}/protocol/openid-connect/logout`;
 
   if (session) {
     // this will log out the user on Keycloak side

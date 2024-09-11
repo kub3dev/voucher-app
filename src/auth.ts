@@ -3,7 +3,7 @@ import KeycloakProvider from "next-auth/providers/keycloak";
 // this will refresh an expired access token, when needed
 async function refreshAccessToken(token) {
   const resp = await fetch(
-    `${process.env.KEYCLOAK_ISSUER}/protocol/openid-connect/token`,
+    `${process.env.NEXTAUTH_KEYCLOAK_ISSUER}/protocol/openid-connect/token`,
     {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
@@ -36,7 +36,7 @@ export const authOptions = {
     KeycloakProvider({
       clientId: `${process.env.NEXTAUTH_KEYCLOAK_CLIENT_ID}`,
       clientSecret: `${process.env.NEXTAUTH_KEYCLOAK_CLIENT_SECRET}`,
-      issuer: `${process.env.KEYCLOAK_ISSUER}`,
+      issuer: `${process.env.NEXTAUTH_KEYCLOAK_ISSUER}`,
     }),
   ],
 
